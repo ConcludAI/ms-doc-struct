@@ -76,7 +76,7 @@ pub struct Table {}
 //             }
 //     ]
 // }
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct Para {
     pub spans: Vec<Span>,
     #[serde(rename = "boundingRegions")]
@@ -85,7 +85,7 @@ pub struct Para {
     pub content: String
 }
 
-#[derive(Clone, Copy, Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum ParaRole {
     #[serde(rename = "title")]
     Title,
