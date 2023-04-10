@@ -11,7 +11,7 @@ pub struct Layout {
     pub analysis: Analysis
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Analysis {
     pub content: String,
     pub pages: Vec<Page>,
@@ -34,7 +34,7 @@ pub struct Analysis {
 //         "kind": "document"
 //     }
 // ]
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Page {
     #[serde(rename = "pageNumber")]
     pub page_num: usize,
@@ -47,16 +47,16 @@ pub struct Page {
     pub kind: String
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Word {}
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Line {}
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Span {}
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Table {}
 
 // modelled after https://learn.microsoft.com/en-gb/azure/applied-ai-services/form-recognizer/concept-layout?view=form-recog-3.0.0
@@ -76,7 +76,7 @@ pub struct Table {}
 //             }
 //     ]
 // }
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Para {
     pub spans: Vec<Span>,
     #[serde(rename = "boundingRegions")]
@@ -85,7 +85,7 @@ pub struct Para {
     pub content: String
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, Serialize, Deserialize)]
 pub enum ParaRole {
     #[serde(rename = "title")]
     Title,
@@ -101,7 +101,7 @@ pub enum ParaRole {
     PageNumber
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct BoundingRegion {
     #[serde(rename = "pageNumber")]
     pub page_num: usize,
@@ -109,7 +109,7 @@ pub struct BoundingRegion {
 
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Style {}
 
 pub type Polygon = Vec<f32>;
