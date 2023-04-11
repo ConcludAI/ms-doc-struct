@@ -56,7 +56,9 @@ pub struct Page {
 pub struct Word {}
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
-pub struct Line {}
+pub struct Line {
+    content: String,
+}
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Span {}
