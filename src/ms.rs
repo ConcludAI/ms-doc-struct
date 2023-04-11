@@ -77,7 +77,7 @@ pub struct Word {}
 // }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Line {
-    content: String,
+    pub content: String,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
