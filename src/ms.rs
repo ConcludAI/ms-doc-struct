@@ -85,7 +85,7 @@ pub struct Para {
     pub content: String
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub enum ParaRole {
     #[serde(rename = "title")]
     Title,
