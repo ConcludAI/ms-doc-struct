@@ -1,6 +1,11 @@
 use serde::{Serialize, Deserialize};
 
 #[derive(Debug, Serialize, Deserialize)]
+pub struct LayoutForStatus {
+    pub status: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Layout {
     pub status: String,
     #[serde(rename = "createdDateTime")]
