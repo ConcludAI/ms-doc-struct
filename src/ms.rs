@@ -55,6 +55,26 @@ pub struct Page {
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Word {}
 
+// modelled after
+// {
+//     "content": "Some Content",
+//     "polygon": [
+//         557,
+//         84,
+//         1111,
+//         85,
+//         1111,
+//         156,
+//         557,
+//         154
+//     ],
+//     "spans": [
+//         {
+//             "offset": 567,
+//             "length": 13
+//         }
+//     ]
+// }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Line {
     content: String,
