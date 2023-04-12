@@ -49,7 +49,7 @@ pub struct Page {
     pub words: Vec<Word>,
     pub lines: Vec<Line>,
     pub spans: Vec<Span>,
-    pub kind: String
+    pub kind: Option<String>
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
@@ -123,7 +123,7 @@ pub struct Table {
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Cell {
-    kind: CellKind,
+    kind: Option<CellKind>,
     #[serde(rename = "rowIndex")]
     row_idx: usize,
     #[serde(rename = "columnIndex")]
